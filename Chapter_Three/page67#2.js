@@ -33,6 +33,7 @@ class Stack {
 class stackMin extends Stack {
     constructor() {
         super();
+        // super() means that you transfer over the parent class's methods and constructors
         this.minStack = new Stack();
         this.min = null;
     }
