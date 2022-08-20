@@ -33,15 +33,14 @@ class Stack {
 class stackMin extends Stack {
     constructor() {
         super();
-        // super() means that you transfer over the parent class's methods and constructors
         this.minStack = new Stack();
-        this.min = null;
+        this.minimum = null;
     }
 
     push(value) {
         super.push(value);
-        if (this.min === null || value <= this.min) {
-            this.min = value;
+        if (this.minimum === null || value <= this.minimum) {
+            this.minimum = value;
             this.minStack.push(value);
         }
     }
@@ -50,12 +49,12 @@ class stackMin extends Stack {
         let value = super.pop();
         if (value === this.minStack.peek()) {
             this.minStack.pop();
-            this.min = this.minStack.peek();
+            this.minimum = this.minStack.peek();
         }
         return value;
     }
 
     min() {
-        return this.min();
+        return this.minimum;
     }
 }
